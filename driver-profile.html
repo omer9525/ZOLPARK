@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>איזור אישי - נהג</title>
+    <link rel="stylesheet" href="driver-profile.css" />
+  </head>
+  <body>
+    <header>
+      <a href="map.html" class="back-arrow" aria-label="חזרה לעמוד הבית">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#5271ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </a>
+      <div class="logo">
+          <a href="map.html" class="logo">
+              <img src="media/Zolpark logo_without slogan.png" alt="ZolPark Logo">
+          </a>
+      </div>
+      <button id="signout-btn">התנתק</button>
+    </header>
+
+    <main class="main">
+      <h1>שלום, <span id="driver-name">...</span>!</h1>
+      <h2>היסטוריית החניה שלך: </h2>
+
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>תאריך</th>
+            <th>כתובת</th>
+            <th>משך</th>
+            <th>מחיר</th>
+          </tr>
+        </thead>
+        <tbody id="history-body">
+          <!-- נתוני דמו יוזנו מכאן ב-JS -->
+        </tbody>
+      </table>
+
+      <p class="no-data" style="display: none;">* לא נמצאו נתונים מהחודש האחרון</p>
+    </main>
+
+     <script type="module" src="driver-profile.js"></script>
+  </body>
+</html>

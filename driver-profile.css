@@ -1,0 +1,161 @@
+:root {
+  --primary: #5a8dcf;
+  --accent: #2950c2;
+  --bg-light: #e7f0ff;
+  --bg-box: #f4f6f9;
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  background-color: #e7f0ff;
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  color: #333;
+}
+
+.back-arrow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: #5271ff;
+  top: 2px;
+}
+
+.back-arrow:hover {
+  transform: scale(1.1);
+}
+
+header {
+  background-color: transparent;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 50px;
+}
+
+#signout-btn {
+  background: none;
+  border: none;
+  font-size: 16px; 
+  font-weight: 600;
+  color: #5271ff;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+#signout-btn:hover {
+  color: #859dff;
+}
+
+.loader-overlay {
+  background: #e7f0ff;
+}
+
+.spinner {
+  border: 4px solid #c9dbf1;
+  border-top: 4px solid var(--primary);
+}
+
+.main {
+max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  margin: 2rem 0 1rem;
+  color: #444;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.driver-info {
+  background-color: transparent;
+  padding: 1rem 0;
+  border: none;
+}
+
+.driver-info p {
+  margin-bottom: 0.4rem;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.04);
+}
+
+.history-table th,
+.history-table td {
+  padding: 0.9rem 1rem;
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+
+.history-table th {
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+}
+
+.history-table tr:hover td {
+  background-color: #f9faff;
+}
+
+.no-data {
+  text-align: center;
+  color: #888;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 3rem;
+  }
+
+  .driver-info {
+    font-size: 1.1rem;
+  }
+
+  .history-table th,
+  .history-table td {
+    padding: 1rem 1.25rem;
+  }
+}
+

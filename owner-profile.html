@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zolpark - Profile</title>
+  <link rel="stylesheet" href="owner-profile.css" />
+  <script type="module" src="owner-profile.js" defer></script>
+  <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJwrDZphsUV2QS7ZlwsU4ZkG9V-GPZovs&loading=async&libraries=places&callback=initApp"></script>
+</head>
+<body>
+  <header><a href="owner-profile.html"><img src="media/Zolpark logo_without slogan.png" alt="Zolpark Logo." class="logo"></a></header>
+  <div class="dashboard-container">
+    <button id="signout-btn" class="light-button">התנתק</button>
+    <h2 id="greeting">שלום, ...</h2>
+
+    <div class="details-section">
+      <button id="toggle-details" class="light-button">הפרטים שלי</button>
+      <div id="details-content" class="details-content hidden">
+        <p><strong>שם מלא:</strong> <span id="owner-name"></span></p>
+        <p><strong>דואר אלקטוני:</strong> <span id="owner-email"></span></p>
+        <p><strong>טלפון:</strong> <span id="owner-phone"></span></p>
+      </div>
+    </div>
+    <div class="map-wrapper">
+    <div id="owner-map-canvas"></div>
+    <div id="map-legend" class="map-legend">
+      <div><span class="legend-dot owner-dot"></span>החניונים שלי</div>
+      <div><span class="legend-dot competitor-dot"></span>שאר החניונים</div>
+    </div>
+    </div>
+
+    <h3 id="mylots-title">החניונים שלי: </h3>
+    <div id="lot-buttons-container" class="lots-list"></div>
+
+    <button id="toggle-lot-form">הוסף חניון</button>
+
+    <div id="lot-form-container" class="hidden">
+      <h4>הוסף חניון חדש</h4>
+      <form id="lot-form">
+        <div class="input-control">
+            <label for="lot-name">שם חניון</label>
+            <input id="lot-name" type="text" placeholder="איך קוראים לחניון שלך?">
+            <div class="error"></div>
+        </div>
+        <div class="input-control">
+            <label for="lot-address">כתובת</label>
+            <input id="lot-address" type="text" placeholder="למשל: הלוחמים 15">
+            <div id="suggestions-container"></div>
+            <div class="error"></div>
+        </div>
+        <h4 id="price-title">מחיר</h4>
+        <div class="input-control">
+            <label for="lot-price">שעה ראשונה</label>
+            <input id="lot-price" type="text" placeholder="למשל: ₪20">
+            <div class="error"></div>
+        </div>
+        <div class="input-control">
+            <label for="lot-price-15">כל רבע שעה נוספת</label>
+            <input id="lot-price-15" type="text" placeholder="למשל: ₪2">
+            <div class="error"></div>
+        </div>        
+
+        <h4>שעות פעילות לפי ימים</h4>
+        <div id="checkbox-alwayOpen">
+          <input type="checkbox" id="always-open"/>
+          <label for="always-open">פתוח 24/7</label>
+        </div>
+        <div id="popup247" class="hidden popup">*שים לב: יש לבטל בחירה זו במידה ותרצה להגדיר שעות פעילות ידנית</div>
+        <div id="opening-hours-section"></div>
+        <button type="submit" class="light-button">שמור חניון</button>
+        <div id="lot-status"></div>
+      </form>
+    </div>
+    
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZolPark - מצא חניה בקלות</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJwrDZphsUV2QS7ZlwsU4ZkG9V-GPZovs&libraries=places" defer></script>
+  <link rel="stylesheet" href="map.css">
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="map.html">
+        <img src="media/Zolpark logo_without slogan.png" alt="ZolPark logo">
+      </a>
+    </div>
+    
+    <a href="driver-profile.html" class="login-link icon-only" aria-label="אזור אישי">
+      <img src="media/user-icon.png" alt="אזור אישי">
+    </a>
+
+  </header>
+
+  <main>
+    <div class="destination-search">
+      <input id="destination-input" type="text" placeholder="בחר את כתובת היעד אליה תרצה להגיע" />
+      <button id="destination-btn">חפש</button>
+    </div>
+  
+    <div id="filter-panel" class="filter-panel hidden">
+      <h3>סנן חניונים</h3>
+  
+      <label>טווח מחירים:</label>
+      <select id="price-filter">
+        <option value="">הכל</option>
+        <option value="low">עד 10 ₪</option>
+        <option value="medium">11–20 ₪</option>
+        <option value="high">21+ ₪</option>
+      </select>
+  
+      <label>מרחק מהיעד:</label>
+      <select id="distance-filter">
+        <option value="">הכל</option>
+        <option value="near">עד 1 ק״מ</option>
+        <option value="medium">1–3 ק״מ</option>
+        <option value="far">3+ ק״מ</option>
+      </select>
+  
+      <label>זמינות:</label>
+      <div class="availability-options">
+        <label><input type="checkbox" id="open-now"> פתוח עכשיו</label><br>
+        <label><input type="checkbox" id="open-saturday"> פתוח בשבתות וחגים</label>
+      </div>
+  
+      <div class="filter-actions">
+        <button id="clear-filters" class="clear-filters">אפס סינון</button>
+        <button id="apply-filters" class="apply-filters">החל סינון</button>
+      </div>
+    </div>
+  </main>
+  
+  <div id="map" class="map-container"></div>
+  
+  <div class="credit-card-modal hidden fade-in">
+    <div class="modal-content">
+      <h2>בחר אמצעי תשלום</h2>
+      <div class="card-options"></div>
+      <div id="new-card-form" class="hidden fade-in" ></div>
+      
+      <div class="modal-actions">
+        <button class="cancel-btn">ביטול</button>
+        <button class="confirm-payment-btn">אישור</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirm-popup" class="confirm-popup hidden">
+    <div class="popup-content">
+      <p>האם אתה בטוח שברצונך לפתוח את השער ולהתחיל חיוב?</p>
+      <div class="popup-actions">
+        <button id="confirm-yes">כן, תמשיך</button>
+        <button id="confirm-no">ביטול</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="gate-popup-overlay" class="popup-overlay hidden">
+    <div class="popup-box1" id="gate-animation-container"></div>
+  </div>
+
+  <script src="https://unpkg.com/lottie-web@latest/build/player/lottie.min.js"></script>
+
+  <script type="module" src="map.js" ></script>
+</body>
+</html>

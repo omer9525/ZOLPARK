@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zolpark – Signup</title>
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<header><a href="index.html"><img src="media/Zolpark logo_without slogan.png" alt="Zolpark Logo." class="logo"></a></header>
+<body>
+    <div class="container">  
+        <form id="form">
+            <h2>בעל חניון חדש</h2>
+            <div class="input-control">
+                <label for="name">שם</label>
+                <input id="name" name="full-name" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">דואר אלקטרוני</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">סיסמה</label>
+                <input id="password"name="password" type="password">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="phone">מספר טלפון</label>
+                <input id="phone" name="phoneNum" type="tel">
+                <div class="error"></div>
+            </div>
+            <button type="submit">הירשם</button>
+            <div id="status" class="status-message"></div>
+            <h5>יש לך כבר חשבון? <a href="login.html">היכנס כאן</a></h5>
+        </form>
+    </div>    
+  <script type="module" src="signup.js"></script>
+</body>
+</html>

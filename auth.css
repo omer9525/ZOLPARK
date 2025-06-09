@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  #form {
+    width: 320px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px 25px;
+    background-color: white;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #form h2 {
+    color: #5271ff;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  #form button {
+    padding: 0.8rem 1.2rem;
+    margin-top: 10px;
+    width: 100%;
+    color: white;
+    background-color: #5271ff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  #form button:hover {
+    background-color: #405bdd;
+    transform: scale(1.03);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  }
+  
+  .input-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .input-control input {
+    border: 2px solid #e0ebff;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    padding: 10px;
+    width: 100%;
+    background-color: #f9fbff;
+  }
+  
+  .input-control input:focus {
+    outline: none;
+    border-color: #5271ff;
+  }
+  
+  .input-control.error input {
+    border-color: #ff5252;
+  }
+  
+  .input-control .error {
+    color: #ff5252;
+    font-size: 12px;
+    height: 13px;
+    margin-top: 5px;
+  }
+  
+  .status-message {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: center;
+  }
+  
+  .popup-error {
+    background-color: #ffe6e6;
+    color: #a80000;
+    border: 1px solid #ff5252;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    margin-top: 10px;
+    transition: opacity 0.2s ease;
+  }
+  
+  .popup-success {
+    background-color: #e6ffe6;
+    color: #006600;
+    border: 1px solid #09c372;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    margin-top: 10px;
+    transition: opacity 0.2s ease;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      align-items: flex-start;
+      height: auto;
+      min-height: 100vh;
+      padding: 60px 0 0 0;
+    }
+  
+    #form {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 20px;
+      font-size: 14px;
+    }
+  
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      z-index: 1000;
+    }
+
+    .input-control {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+  
+    .input-control label {
+      font-size: 16px;
+      color: #333333;
+      font-weight: 500;
+    }
+  
+    .input-control input {
+      width: 100%;
+      padding: 12px;
+      font-size: 14px;
+    }
+  }
+  
