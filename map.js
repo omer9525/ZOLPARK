@@ -268,7 +268,7 @@ async function initMap() {
     if (panel) {
       panel.classList.toggle("hidden");
     } else {
-      console.warn("⚠️ לא נמצא filter-panel ב־DOM.");
+      console.warn(" לא נמצא filter-panel ב־DOM.");
     }
   };
   document.querySelector(".map-container").appendChild(filterButton);
@@ -556,7 +556,7 @@ async function initMap() {
             </html>
           `);
         } else {
-          alert("🚫 Safari חסם את פתיחת הלשונית החדשה");
+          alert("הלשונית החדשה נחסמה על ידי הדפדפן");
           return;
         }
         const user = auth.currentUser;
@@ -1002,7 +1002,7 @@ if (applyBtn) {
         }, 3000);
       } 
       else {
-        console.warn(`⛔ Directions failed for "${spot.name}" →`, status);
+        console.warn(`Directions failed for "${spot.name}" →`, status);
       }
     });
   });
