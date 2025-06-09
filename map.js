@@ -452,7 +452,6 @@ async function initMap() {
     onAdd() {
       if (this.div) {
         if (activeParkingSpotName === this.data.name) {
-          console.log('yes');
           const alldiv = this.div.querySelector(".bubble-box");
           alldiv.classList.remove("hidden");
           this.div.style.display = "block";
@@ -570,9 +569,9 @@ async function initMap() {
               customerName: user.displayName || "ללא שם",
               timestamp: new Date(),
             });
-            console.log("📍 ליד נשמר");
+            console.log("ליד נשמר");
           } catch (error) {
-            console.error("❌ שגיאה בשמירת ליד:", error);
+            console.error("שגיאה בשמירת ליד:", error);
           }
         }
 
@@ -631,7 +630,7 @@ async function initMap() {
                     const message = await response.text();
                     console.log(message);
             } catch (error) {
-              console.log("ניסיון החיבור נכשל: " + error.message);
+              console.log("לא נמצא שרת זמין לתקשר עמו: " + error.message);
             }            
           };
           
@@ -708,13 +707,13 @@ async function initMap() {
                     const message = await response.text();
                     console.log(message);
             } catch (error) {
-              console.log("ניסיון החיבור נכשל: " + error.message);
+              console.log("לא נמצא שרת זמין לתקשר עמו: " + error.message);
             }
 
         const user = auth.currentUser;
         const ownerId = this.data.ownerId;
         const lotId = this.data.lotId; 
-        console.log("🚗 this.data:", this.data);
+        console.log("this.data:", this.data);
         if (user && this.startTime) {
           const endTime = new Date();
           const durationMinutes = Math.floor((endTime - this.startTime) / 60000);
@@ -733,9 +732,9 @@ async function initMap() {
                 durationMinutes,
                 totalPrice: Number(price.toFixed(2))
               });
-              console.log("📦 קבלה נשמרה אצל בעל החניון");
+              console.log("קבלה נשמרה אצל בעל החניון");
             } catch (error) {
-              console.error("❌ שגיאה בשמירת הקבלה אצל בעל החניון:", error);
+              console.error("שגיאה בשמירת הקבלה אצל בעל החניון:", error);
             }
         }
 
@@ -781,7 +780,6 @@ async function initMap() {
     onRemove() {
       if (this.div) {
         if (this.isActiveSession) {
-          console.log("hide")
           this.div.classList.add('hidden');
         } else {
           delete parkingBubbles[this.data.name];
